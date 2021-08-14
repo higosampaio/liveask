@@ -13,7 +13,7 @@ type QuestionType = {
   isAnswered: boolean;
   isHighlighted: boolean;
   likeCount: number;
-  hasLiked: boolean;
+  likeId: string | undefined;
 };
 
 type FirebaseQuestions = Record<
@@ -64,7 +64,7 @@ export function useRoom(roomId: string) {
       );
 
       setTitle(databaseRoom.title);
-      // setQuestions(parsedQuestions);
+      setQuestions(parsedQuestions);
     });
 
     return () => {
