@@ -2,24 +2,24 @@ import { createContext, ReactNode, useEffect, useState } from "react";
 
 import { auth, firebase } from "../services/firebase";
 
-type User = {
+interface User {
   id: string;
   name: string;
   avatar: string;
-};
+}
 
-type AuthContextType = {
+interface AuthContextType {
   user: User | undefined;
   signInWithGoogle: () => Promise<void>;
-};
+}
 
-type AuthContextProviderProps = {
+interface AuthContextProviderProps {
   children: ReactNode;
-};
+}
 
 export const AuthContext = createContext({} as AuthContextType);
 
-export function AuthContextProvider(props: AuthContextProviderProps) {
+export const AuthContextProvider = (props: AuthContextProviderProps) => {
   const [user, setUser] = useState<User>();
 
   useEffect(() => {
@@ -68,4 +68,4 @@ export function AuthContextProvider(props: AuthContextProviderProps) {
       {props.children}
     </AuthContext.Provider>
   );
-}
+};

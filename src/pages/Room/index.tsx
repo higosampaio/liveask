@@ -1,16 +1,17 @@
-import { FormEvent, useState } from "react";
+import { FormEvent, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
+import Switch from "react-switch";
+import { ThemeContext } from "styled-components";
+import { shade } from "polished";
 
 import { useAuth } from "../../hooks/useAuth";
 import { useRoom } from "../../hooks/useRoom";
+import { useTheme } from "../../hooks/useTheme";
 import { database } from "../../services/firebase";
-
 import { Button } from "../../components/Button";
 import { RoomCode } from "../../components/RoomCode";
 import { Question } from "../../components/Question";
-
 import logoImg from "../../assets/images/logo.svg";
-
 import "./styles.scss";
 
 type RoomParams = {
@@ -22,7 +23,9 @@ export function Room() {
   const params = useParams<RoomParams>();
   const roomId = params.id;
   const [newQuestion, setNewQuestion] = useState("");
-  const { questions, title } = useRoom(roomId);
+  const { questions, roomTitle } = useRoom(roomId);
+  const { colors } = useContext(ThemeContext);
+  const { toggleTheme, theme } = useTheme();
 
   async function handleSendQuestion(event: FormEvent) {
     event.preventDefault();
@@ -70,13 +73,26 @@ export function Room() {
       <header>
         <div className="content">
           <img src={logoImg} alt="" />
-          <RoomCode code={roomId} />
+          <div>
+            <Switch
+              onChange={toggleTheme}
+              checked={theme.title === "dark"}
+              checkedIcon={false}
+              uncheckedIcon={false}
+              height={10}
+              width={40}
+              handleDiameter={20}
+              offColor={shade(0.15, colors.background)}
+              onColor={colors.primary}
+            />
+            <RoomCode code={roomId} />
+          </div>
         </div>
       </header>
 
       <main>
         <div className="room-title">
-          <h1>Sala {title}</h1>
+          <h1>Sala {roomTitle}</h1>
           {questions.length > 0 && <span>{questions.length} pergunta(s)</span>}
         </div>
 
