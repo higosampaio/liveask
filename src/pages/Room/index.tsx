@@ -12,7 +12,7 @@ import { Button } from "../../components/Button";
 import { RoomCode } from "../../components/RoomCode";
 import { Question } from "../../components/Question";
 import logoImg from "../../assets/images/logo.svg";
-import "./styles.scss";
+import { Container } from "../../styles/room";
 
 type RoomParams = {
   id: string;
@@ -69,7 +69,7 @@ export function Room() {
   }
 
   return (
-    <div id="page-room">
+    <Container>
       <header>
         <div className="content">
           <img src={logoImg} alt="" />
@@ -92,7 +92,7 @@ export function Room() {
 
       <main>
         <div className="room-title">
-          <h1>Sala {roomTitle}</h1>
+          <h1>{roomTitle}</h1>
           {questions.length > 0 && <span>{questions.length} pergunta(s)</span>}
         </div>
 
@@ -164,6 +164,6 @@ export function Room() {
           })}
         </div>
       </main>
-    </div>
+    </Container>
   );
 }

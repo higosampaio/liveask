@@ -1,11 +1,13 @@
-#page-auth {
+import styled from "styled-components";
+
+export const Container = styled.div`
   display: flex;
   align-items: stretch;
   height: 100vh;
 
   aside {
     flex: 7;
-    background: #835afd;
+    background: ${(props) => props.theme.colors.primary};
     color: #fff;
     display: flex;
     flex-direction: column;
@@ -61,8 +63,10 @@
         height: 50px;
         border-radius: 8px;
         padding: 0 16px;
-        background: #fff;
-        border: 1px solid #a8a8b3;
+        background: ${(props) => props.theme.colors.content};
+        color: ${(props) => props.theme.colors.text};
+        outline: none;
+        border: none;
       }
 
       button {
@@ -81,7 +85,7 @@
       margin-top: 16px;
 
       a {
-        color: #e559f9;
+        color: ${(props) => props.theme.colors.primary};
       }
     }
 
@@ -90,8 +94,8 @@
       height: 50px;
       border-radius: 8px;
       font-weight: 500;
-      background: #ea4335;
-      color: #fff;
+      background: #fff;
+      color: #121212;
       padding: 0 32px;
 
       display: flex;
@@ -136,4 +140,4 @@
       }
     }
   }
-}
+`;

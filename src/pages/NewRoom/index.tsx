@@ -3,13 +3,10 @@ import { Link, useHistory } from "react-router-dom";
 
 import { useAuth } from "../../hooks/useAuth";
 import { database } from "../../services/firebase";
-
 import { Button } from "../../components/Button";
-
 import illustrationImg from "../../assets/images/illustration.svg";
 import logoImg from "../../assets/images/logo.svg";
-
-import "./styles.scss";
+import { Container } from "../../styles/home";
 
 export function NewRoom() {
   const history = useHistory();
@@ -33,7 +30,7 @@ export function NewRoom() {
   }
 
   return (
-    <div id="page-auth">
+    <Container>
       <aside>
         <img
           src={illustrationImg}
@@ -60,6 +57,6 @@ export function NewRoom() {
           </p>
         </div>
       </main>
-    </div>
+    </Container>
   );
 }

@@ -22,7 +22,7 @@ export const Container = styled.button`
   }
 
   &.outlined {
-    background: #fff;
+    background: ${(props) => props.theme.colors.content};
     border: 1px solid ${(props) => props.theme.colors.primary};
     color: ${(props) => props.theme.colors.primary};
   }

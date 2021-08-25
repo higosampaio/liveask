@@ -7,8 +7,7 @@ import { Button } from "../../components/Button";
 import logoImg from "../../assets/images/logo.svg";
 import googleIconImg from "../../assets/images/google-icon.svg";
 import illustrationImg from "../../assets/images/illustration.svg";
-
-import "./styles.scss";
+import { Container } from "../../styles/home";
 
 export function Home() {
   const history = useHistory();
@@ -45,7 +44,7 @@ export function Home() {
   }
 
   return (
-    <div id="page-auth">
+    <Container>
       <aside>
         <img
           src={illustrationImg}
@@ -73,6 +72,6 @@ export function Home() {
           </form>
         </div>
       </main>
-    </div>
+    </Container>
   );
 }

@@ -1,7 +1,9 @@
-#page-room {
+import styled from "styled-components";
+
+export const Container = styled.div`
   header {
     padding: 24px;
-    border-bottom: 1px solid #e2e2e2;
+    border-bottom: 1px solid ${(props) => props.theme.colors.borderColor};
 
     .content {
       max-width: 1120px;
@@ -37,12 +39,12 @@
       h1 {
         font-family: "Poppins", sans-serif;
         font-size: 24px;
-        color: #29292e;
+        color: ${(props) => props.theme.colors.text};
       }
 
       span {
         margin-left: 16px;
-        background: #e559f9;
+        background: ${(props) => props.theme.colors.secundary};
         border-radius: 9999px;
         padding: 8px 16px;
         color: #fff;
@@ -95,7 +97,7 @@
           button {
             background: transparent;
             border: 0;
-            color: #835afd;
+            color: ${(props) => props.theme.colors.secundary};
             text-decoration: underline;
             font-size: 14px;
             font-weight: 500;
@@ -109,4 +111,4 @@
       margin-top: 32px;
     }
   }
-}
+`;
