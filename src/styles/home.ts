@@ -7,7 +7,7 @@ export const Container = styled.div`
 
   aside {
     flex: 7;
-    background: ${(props) => props.theme.colors.primary};
+    background: #1e1e1e;
     color: #fff;
     display: flex;
     flex-direction: column;

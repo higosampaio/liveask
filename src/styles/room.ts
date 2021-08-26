@@ -18,6 +18,7 @@ export const Container = styled.div`
 
       > div {
         display: flex;
+        align-items: center;
         gap: 16px;
 
         button {
@@ -59,7 +60,8 @@ export const Container = styled.div`
         border: 0;
         padding: 16px;
         border-radius: 8px;
-        background: #fefefe;
+        background: ${(props) => props.theme.colors.content};
+        color: ${(props) => props.theme.colors.text};
         box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
         resize: vertical;
         min-height: 130px;
@@ -83,7 +85,7 @@ export const Container = styled.div`
 
           span {
             margin-left: 8px;
-            color: #29292e;
+            color: ${(props) => props.theme.colors.text};
             font-weight: 500;
             font-size: 14px;
           }
@@ -108,7 +110,7 @@ export const Container = styled.div`
     }
 
     .question-list {
-      margin-top: 32px;
+      margin: 32px 0;
     }
   }
 `;

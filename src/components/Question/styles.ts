@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  background: #fefefe;
+  background: ${(props) => props.theme.colors.content};
   border-radius: 8px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
   padding: 24px;
@@ -11,20 +11,17 @@ export const Container = styled.div`
   }
 
   &.highlighted {
-    background: #f4f8ff;
+    background: ${(props) => props.theme.colors.content};
     border: 1px solid ${(props) => props.theme.colors.primary};
-
-    footer .user-info span {
-      color: #29292e;
-    }
   }
 
   &.answered {
-    background: #dbdcdd;
+    background: ${(props) => props.theme.colors.content};
+    filter: brightness(0.7);
   }
 
   p {
-    color: #29292e;
+    color: ${(props) => props.theme.colors.text};
   }
 
   footer {
