@@ -103,7 +103,7 @@ export const Container = styled.div`
       align-items: center;
 
       cursor: pointer;
-      border: 0;
+      border: 1px solid #ccc;
 
       transition: filter 0.2s;
 

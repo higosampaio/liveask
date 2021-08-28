@@ -1,18 +1,7 @@
-import { ReactNode } from "react";
-
 import cx from "classnames";
-import { Container } from "./styles";
 
-type QuestionProps = {
-  content: string;
-  author: {
-    name: string;
-    avatar: string;
-  };
-  isAnswered?: boolean;
-  isHighlighted?: boolean;
-  children?: ReactNode;
-};
+import { Container } from "./styles";
+import { QuestionProps } from "../../types/QuestionProps";
 
 export function Question({
   content,

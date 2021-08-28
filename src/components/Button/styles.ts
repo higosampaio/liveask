@@ -4,7 +4,7 @@ export const Container = styled.button`
   height: 50px;
   border-radius: 8px;
   font-weight: 500;
-  background: ${(props) => props.theme.colors.primary};
+  background: ${(props) => props.theme.colors?.primary};
   color: #fff;
   padding: 0 32px;
 
@@ -22,9 +22,9 @@ export const Container = styled.button`
   }
 
   &.outlined {
-    background: ${(props) => props.theme.colors.content};
-    border: 1px solid ${(props) => props.theme.colors.primary};
-    color: ${(props) => props.theme.colors.primary};
+    background: ${(props) => props.theme.colors?.content};
+    border: 1px solid ${(props) => props.theme.colors?.primary};
+    color: ${(props) => props.theme.colors?.primary};
   }
 
   &:not(:disabled):hover {

@@ -65,6 +65,7 @@ export const Container = styled.div`
         box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
         resize: vertical;
         min-height: 130px;
+        outline: none;
       }
 
       .form-footer {

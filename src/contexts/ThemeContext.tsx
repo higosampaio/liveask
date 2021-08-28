@@ -1,6 +1,7 @@
-import { createContext, useState, useCallback } from "react";
-import { ThemeProvider } from "styled-components";
+import { createContext, useCallback } from "react";
+import { ThemeProvider, DefaultTheme } from "styled-components";
 
+import usePersistedState from "../hooks/usePersistedState";
 import { lightTheme } from "../styles/themes/light";
 import { darkTheme } from "../styles/themes/dark";
 
@@ -14,11 +15,14 @@ export const ThemeContext = createContext<ThemeContextData>(
 );
 
 export const ThemeContextProvider: React.FC = ({ children }) => {
-  const [theme, setTheme] = useState<any>(lightTheme);
+  const [theme, setTheme] = usePersistedState<DefaultTheme>(
+    "theme",
+    lightTheme
+  );
 
   const toggleTheme = useCallback(() => {
     setTheme(theme.title === "light" ? darkTheme : lightTheme);
-  }, [theme]);
+  }, [setTheme, theme]);
 
   return (
     <ThemeContext.Provider value={{ toggleTheme, theme }}>
