@@ -1,7 +1,7 @@
 import cx from "classnames";
 
-import { Container } from "./styles";
 import { QuestionProps } from "../../types/QuestionProps";
+import { Container } from "./styles";
 
 export function Question({
   content,

@@ -6,7 +6,7 @@ import { Button } from ".";
 let container: any = null;
 
 beforeEach(() => {
-  container = document.createElement("div");
+  container = document.createElement("button");
   document.body.appendChild(container);
 });
 
@@ -18,7 +18,7 @@ afterEach(() => {
 
 describe("Button Component", () => {
   it("should be render", () => {
-    render(<Button>Text</Button>);
+    render(<Button isOutlined>Text</Button>);
     expect(screen.getByText("Text")).toBeTruthy();
   });
 });

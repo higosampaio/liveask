@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  background: ${(props) => props.theme.colors.content};
+  background: ${(props) => props.theme.colors?.content};
   border-radius: 8px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
   padding: 24px;
@@ -11,17 +11,17 @@ export const Container = styled.div`
   }
 
   &.highlighted {
-    background: ${(props) => props.theme.colors.content};
-    border: 1px solid ${(props) => props.theme.colors.primary};
+    background: ${(props) => props.theme.colors?.content};
+    border: 1px solid ${(props) => props.theme.colors?.primary};
   }
 
   &.answered {
-    background: ${(props) => props.theme.colors.content};
+    background: ${(props) => props.theme.colors?.content};
     filter: brightness(0.7);
   }
 
   p {
-    color: ${(props) => props.theme.colors.text};
+    color: ${(props) => props.theme.colors?.text};
   }
 
   footer {
@@ -65,10 +65,10 @@ export const Container = styled.div`
         gap: 8px;
 
         &.liked {
-          color: ${(props) => props.theme.colors.primary};
+          color: ${(props) => props.theme.colors?.primary};
 
           svg path {
-            stroke: ${(props) => props.theme.colors.primary};
+            stroke: ${(props) => props.theme.colors?.primary};
           }
         }
       }
