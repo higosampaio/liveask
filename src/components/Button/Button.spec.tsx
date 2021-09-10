@@ -19,6 +19,8 @@ afterEach(() => {
 describe("Button Component", () => {
   it("should be render", () => {
     render(<Button isOutlined>Text</Button>);
-    expect(screen.getByText("Text")).toBeTruthy();
+
+    const buttonDefault = screen.getByText("Text");
+    expect(buttonDefault).toBeTruthy();
   });
 });

@@ -27,18 +27,15 @@ describe("Question Component", () => {
   };
 
   it("should be render with content and author", () => {
-    const { container } = render(
+    render(
       <Question content={fakeQuestion.content} author={fakeQuestion.author} />
     );
 
-    const content = container.querySelector("p");
-    expect(content?.textContent).toBe(fakeQuestion.content);
+    const content = screen.getByText(fakeQuestion.content);
+    expect(content).toBeTruthy();
 
-    const authorImage = container.querySelector("img");
-    expect(authorImage?.src).toBe(fakeQuestion.author.avatar);
-    expect(authorImage?.alt).toBe(fakeQuestion.author.name);
-
-    const authorName = container.querySelector("span");
-    expect(authorName?.textContent).toBe(fakeQuestion.author.name);
+    const image = screen.getByRole("img");
+    expect(image).toHaveProperty("src", fakeQuestion.author.avatar);
+    expect(image).toHaveProperty("alt", fakeQuestion.author.name);
   });
 });
